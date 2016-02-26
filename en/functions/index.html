@@ -82,6 +82,10 @@
                             <a href="../function_list/">Liste des fonction</a>
                         </li>
                     
+                        <li >
+                            <a href="../../keys/">Clavier</a>
+                        </li>
+                    
                     </ul>
                 </li>
             
@@ -109,6 +113,10 @@
                     
                         <li >
                             <a href="../function_list/">Function list</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../keys/">Keys</a>
                         </li>
                     
                     </ul>
@@ -147,6 +155,8 @@
         <li class="main active"><a href="#interactions">Interactions</a></li>
         
             <li><a href="#interacting-with-components">Interacting with components</a></li>
+        
+            <li><a href="#adding-keybindings">Adding keybindings</a></li>
         
             <li><a href="#adding-new-components">Adding new components</a></li>
         
@@ -192,6 +202,15 @@ button-&gt;text = &quot;Hello&quot;;
 <p>Now you can interact with your button and access all it's components<br />
 It also works for all the components<br />
 I invite you to read the <a href="../function_list/">function list</a> to know all the capabilities.</p>
+<h2 id="adding-keybindings">Adding keybindings</h2>
+<p>You can define your own keybindings with a simple function :</p>
+<pre><code class="c">tekgui_addkeytrigger(gui, BKS_J, &quot;click&quot;, GO_DOWN);
+</code></pre>
+
+<p>Where <code>gui</code> is the <code>t_tekgui</code> component<br />
+<code>BKS_J</code> is the key (see the <a href="../../keys/">keylist</a>)<br />
+<code>"click"</code> is the function name that will be called<br />
+<code>GO_DOWN</code> is the state of the key (see the <a href="../../keys/">state list</a>)</p>
 <h2 id="adding-new-components">Adding new components</h2>
 <p>TODO</p>
 <h2 id="user-utility">User utility</h2>

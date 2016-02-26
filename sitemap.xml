@@ -41,6 +41,12 @@
      <changefreq>daily</changefreq>
     </url>
         
+    <url>
+     <loc>None/keys/</loc>
+     <lastmod>2016-02-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
     
 
     
@@ -71,6 +77,12 @@
         
     <url>
      <loc>None/en/function_list/</loc>
+     <lastmod>2016-02-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/keys/</loc>
      <lastmod>2016-02-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
