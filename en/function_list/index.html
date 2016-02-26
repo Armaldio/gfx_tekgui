@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+
+	<title>Function list - gfx_tekgui</title>
+
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../css/highlight.css">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link href="../../css/extra.css" rel="stylesheet">
+        <link href="../../css/highlight-fix.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="../..">gfx_tekgui</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+                <li >
+                    <a href="../..">Overview</a>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Français <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../fr/basics/">Bases</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../fr/building_ini/">Comment construire un ini</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../fr/components/">Configuration des conmposants</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../functions/">Fonctions</a>
+                        </li>
+                    
+                        <li >
+                            <a href="./">Liste des fonction</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown active">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">English <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../basics/">Basics</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../building_ini/">How to build an ini</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../components/">Components configuration</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../functions/">Functions</a>
+                        </li>
+                    
+                        <li class="active">
+                            <a href="./">Function list</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                <li >
+                    <a rel="next" href="../functions/">
+                        <i class="fa fa-arrow-left"></i> Previous
+                    </a>
+                </li>
+                <li class="disabled">
+                    <a rel="prev" >
+                        Next <i class="fa fa-arrow-right"></i>
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#functions">Functions</a></li>
+        
+    
+        <li class="main "><a href="#macros">Macros</a></li>
+        
+            <li><a href="#checkbox">Checkbox</a></li>
+        
+            <li><a href="#image">Image</a></li>
+        
+    
+        <li class="main "><a href="#structures">Structures</a></li>
+        
+            <li><a href="#t_size">t_size</a></li>
+        
+            <li><a href="#t_text">t_text</a></li>
+        
+            <li><a href="#t_button">t_button</a></li>
+        
+            <li><a href="#t_label">t_label</a></li>
+        
+            <li><a href="#t_checkbox">t_checkbox</a></li>
+        
+            <li><a href="#t_progressbar">t_progressbar</a></li>
+        
+            <li><a href="#t_textbox">t_textbox</a></li>
+        
+            <li><a href="#t_image">t_image</a></li>
+        
+            <li><a href="#t_tekgui">t_tekgui</a></li>
+        
+    
+        <li class="main "><a href="#tips-and-tricks">Tips and tricks</a></li>
+        
+    
+    </ul>
+</div></div>
+            <div class="col-md-9" role="main">
+
+<h1 id="functions">Functions</h1>
+<pre><code class="c">t_tekgui    *tekgui_load(const char *file);
+</code></pre>
+
+<p>Load a configuration file <code>file</code> inside a <code>t_tekgui *</code></p>
+<hr />
+<pre><code class="c">void        tekgui_unload(t_tekgui *tekgui);
+</code></pre>
+
+<p>Unload <code>tekgui</code> from the memory</p>
+<hr />
+<pre><code class="c">void        tekgui_display(t_bunny_pixelarray   *pix,
+                           t_tekgui             *gui);
+</code></pre>
+
+<p>Put the graphical representation of <code>gui</code> inside <code>pix</code></p>
+<hr />
+<pre><code class="c">void        fill_color(t_bunny_pixelarray   *pixelarray,
+                        unsigned int        color);
+</code></pre>
+
+<p>Fill completely <code>pixelarray</code> wiht the color <code>color</code></p>
+<hr />
+<pre><code class="c">void            set_max_heap_size(size_t);
+</code></pre>
+
+<p>Set the max ram for the program</p>
+<hr />
+<pre><code class="c">void            tekpixel(t_bunny_pixelarray *a,
+                 t_bunny_position   *p,
+                 t_color        *c);
+</code></pre>
+
+<p>Set the color of a pixel at the position <code>p</code>, of color <code>c</code> and inside <code>a</code></p>
+<hr />
+<pre><code class="c">t_bunny_position    new_bunny_position(int x, int y);
+</code></pre>
+
+<p>Create a <code>t_bunny_position</code> from <code>x</code> and <code>y</code></p>
+<hr />
+<pre><code class="c">t_size          new_size(int w, int h);
+</code></pre>
+
+<p>Create a <code>t_size</code> from  width <code>w</code> and height <code>h</code></p>
+<hr />
+<pre><code class="c">void            tekline(t_bunny_pixelarray  *pix,
+                t_bunny_position    *pos,
+                t_color         *color);
+</code></pre>
+
+<p>Draw a line inside <code>pix</code> from <code>pos[0]</code> to <code>pos[1]</code> of color <code>color</code></p>
+<hr />
+<pre><code class="c">int         tekgui_putstring(t_text         text,
+                     t_bunny_pixelarray *pix,
+                     t_bunny_pixelarray *font);
+</code></pre>
+
+<p>Put a string from a <code>t_text</code> inside <code>pix</code> with the font <code>font</code></p>
+<hr />
+<pre><code class="c">unsigned int        tekgetpixel(t_bunny_pixelarray  *a,
+                    t_bunny_position    *p);
+</code></pre>
+
+<p>return in an <code>unsigned int</code> the pixel color at <code>p</code> inside <code>a</code></p>
+<hr />
+<pre><code class="c">t_color         new_color(int r, int g, int b, int a);
+</code></pre>
+
+<p>Create a <code>t_color</code> from <code>r</code>, <code>g</code>, <code>b</code> and <code>a</code> component</p>
+<hr />
+<pre><code class="c">t_color         load_ini_color(t_bunny_ini *ini,
+                       char *field,
+                       char *name);
+</code></pre>
+
+<p>load a <code>t_color</code> from <code>ini</code> at <code>field</code>-&gt;<code>name</code></p>
+<hr />
+<pre><code class="c">void            *tekfunction(const char *funcname);
+</code></pre>
+
+<p>Return a function pointer from a <code>char *</code> name</p>
+<hr />
+<pre><code class="c">int         is_hover(t_bunny_position   *from_pos,
+                 t_bunny_position   *pos,
+                 t_size         *size);
+</code></pre>
+
+<p>Determine if the position <code>from_pos</code> is inside the rectangle <code>pos-size</code></p>
+<hr />
+<pre><code class="c">int         display_button(t_bunny_pixelarray   *pix,
+                       t_button         *button,
+                       t_bunny_pixelarray   *font);
+</code></pre>
+
+<p>Update the graphics of <code>button</code> inside <code>pix</code> with the font <code>font</code></p>
+<hr />
+<pre><code class="c">t_size          load_ini_size(t_bunny_ini *ini, char *scope);
+</code></pre>
+
+<p>load a <code>t_size</code> from a <code>scope</code> inside <code>ini</code></p>
+<hr />
+<pre><code class="c">t_bunny_position    load_ini_position(t_bunny_ini *ini, char *scope);
+
+</code></pre>
+
+<p>Load a  <code>t_bunny_position</code> from <code>scope</code> inside <code>ini</code></p>
+<hr />
+<pre><code class="c">int         display_textbox(t_bunny_pixelarray  *pix,
+                    t_textbox       *textbox,
+                    t_bunny_pixelarray  *font);
+</code></pre>
+
+<p>Update the graphics of a <code>textbox</code> inside <code>pix</code> wiht the <code>font</code></p>
+<hr />
+<pre><code class="c">void            check_box(t_tekgui *gui, t_checkbox *checkbox);
+</code></pre>
+
+<p>Force checking <code>checkbox</code></p>
+<hr />
+<pre><code class="c">void            uncheck_box(t_tekgui *gui, t_checkbox *checkbox);
+</code></pre>
+
+<p>Force unchecking <code>checkbox</code></p>
+<hr />
+<pre><code class="c">int         display_checkbox(t_bunny_pixelarray *pix,
+                     t_checkbox     *checkbox,
+                     t_bunny_pixelarray *font,
+                     t_bunny_pixelarray **png_checkbox);
+</code></pre>
+
+<p>update the graphics of <code>checkbox</code> inside <code>pix</code>, with <code>font</code> and <code>png_checkbox</code> graphics</p>
+<hr />
+<pre><code class="c">void            tekgui_show(t_tekgui        *gui);
+</code></pre>
+
+<p>Open a window a show the <code>gui</code></p>
+<hr />
+<pre><code class="c">t_bunny_pixelarray  *stretch(t_bunny_pixelarray *oldpixel,
+                 int            newx,
+                 int            newy);
+</code></pre>
+
+<p>Stretch an an image inside <code>oldpixel</code> to be resize to <code>newx, newy</code></p>
+<hr />
+<pre><code class="c">t_progressbar       *progressbar_get(t_tekgui *gui, char *name);
+</code></pre>
+
+<p>Get a progressbar by its <code>name</code></p>
+<hr />
+<pre><code class="c">int         progressbar_setprogress(t_tekgui        *gui,
+                        t_progressbar       *progressbar,
+                        int         progress);
+</code></pre>
+
+<p>Set the <code>progressbar</code> progress to <code>progress</code></p>
+<hr />
+<pre><code class="c">int         progressbar_getprogress(t_progressbar *progressbar);
+</code></pre>
+
+<p>get the current progress from a <code>progressbar</code></p>
+<hr />
+<pre><code class="c">int         display_prgrsbar(t_bunny_pixelarray *pix,
+                     t_progressbar      *prgrsbar);
+</code></pre>
+
+<p>Force update graphic of <code>prgrsbar inside</code>pix`</p>
+<hr />
+<pre><code class="c">t_button        *button_get(t_tekgui *gui, char *name);
+</code></pre>
+
+<p>Get a <code>t_button</code> from its <code>name</code></p>
+<hr />
+<pre><code class="c">int         button_settext(t_tekgui     *gui,
+                       t_button     *button,
+                       char     *text);
+</code></pre>
+
+<p>Set the <code>text</code> of a <code>button</code></p>
+<hr />
+<pre><code class="c">char            *button_gettext(t_button *button);
+</code></pre>
+
+<p>Get the text of a <code>button</code></p>
+<hr />
+<pre><code class="c">char            *checkbox_gettext(t_checkbox *checkbox);
+</code></pre>
+
+<p>Get the text of a <code>t_checkbox</code></p>
+<hr />
+<pre><code class="c">t_checkbox      *checkbox_get(t_tekgui *gui, char *name);
+</code></pre>
+
+<p>Get a <code>t_checkbox</code> from its name</p>
+<hr />
+<pre><code class="c">int         checkbox_settext(t_tekgui   *gui,
+                     t_checkbox *checkbox,
+                     char       *text);
+</code></pre>
+
+<p>Set the <code>text</code>  of a <code>checkbox</code></p>
+<hr />
+<pre><code class="c">t_image         *image_get(t_tekgui *gui, char *name);
+</code></pre>
+
+<p>Retrieve a <code>t_image</code> from a <code>name</code></p>
+<hr />
+<pre><code class="c">char            *image_getsrc(t_image *image);
+</code></pre>
+
+<p>Get the image <code>src</code></p>
+<hr />
+<pre><code class="c">int         image_setsrc(t_tekgui   *gui,
+                     t_image    *image,
+                     char   *src);
+</code></pre>
+
+<p>Set the <code>image</code> <code>src</code></p>
+<hr />
+<pre><code class="c">int         display_label(t_bunny_pixelarray    *pix,
+                      t_label           *label,
+                      t_bunny_pixelarray    *font);
+</code></pre>
+
+<p>Force update graphics of a <code>t_label</code></p>
+<hr />
+<pre><code class="c">t_textbox       *textbox_get(t_tekgui *gui, char *name);
+</code></pre>
+
+<p>retrieve <code>t_textbox</code> from its <code>name</code></p>
+<hr />
+<pre><code class="c">char            *textbox_gettext(t_textbox *textbox);
+</code></pre>
+
+<p>Get text of a <code>t_textbox</code></p>
+<hr />
+<pre><code class="c">int         textbox_settext(t_tekgui    *gui,
+                    t_textbox   *textbox,
+                    char        *text);
+</code></pre>
+
+<p>Set the text of a <code>t_textbox</code></p>
+<hr />
+<pre><code class="c">int         display_image(t_bunny_pixelarray    *pix,
+                      t_image           *image,
+                      int           mode);
+</code></pre>
+
+<p>Force update the graphic of a <code>t_image</code></p>
+<hr />
+<pre><code class="c">char            *getfield_safe(t_bunny_ini *ini,
+                       char *scope,
+                       char *field,
+                       int index);
+</code></pre>
+
+<p>Get a field from a <code>ini</code> with error management</p>
+<h1 id="macros">Macros</h1>
+<h3 id="checkbox">Checkbox</h3>
+<p>You can check if the state of a checkbox is equal to <code>CHECKED</code> <code>UNCHECKED</code></p>
+<h3 id="image">Image</h3>
+<p>There are different size mode for images :</p>
+<p><code>STRETCHMODE_FILL</code> : The image fille the <code>size</code> in any way<br />
+<code>STRETCHMODE_NONE</code> : The image is loaded normaly. If the <code>size</code> is bigger than the image, it is sticked at the top-left. If the <code>size</code> is smaller, the image is cropped<br />
+<code>STRETCHMODE_CENTER</code> : The image is loaded normaly. If the <code>size</code> is bigger than the image, it is sticked at the center. If the <code>size</code> is smaller, the image is cropped</p>
+<h1 id="structures">Structures</h1>
+<h3 id="t_size"><code>t_size</code></h3>
+<pre><code class="c">int     width;
+int     height;
+</code></pre>
+
+<p><code>width</code> : <strong>integer</strong> : the width of the size<br />
+<code>height</code> : <strong>integer</strong> : the height of the size</p>
+<h3 id="t_text"><code>t_text</code></h3>
+<pre><code class="c">char                *text;
+int                 size;
+t_bunny_position    position;
+t_color             color;
+t_bunny_pixelarray  *pix;
+</code></pre>
+
+<p><strong>char *</strong> <code>text</code> : the text that will be printed<br />
+<strong>t_size</strong> <code>size</code> : the size of the component<br />
+<strong>t_bunny_position</strong> <code>position</code> : the position of the component<br />
+<strong>t_color</strong> <code>color</code> : the color of the text<br />
+<strong>t_bunny_pixel_array *</strong> <code>pix</code> : the pixelarray where the text will be dislpayed</p>
+<h3 id="t_button"><code>t_button</code></h3>
+<pre><code class="c">char            *name;
+t_bunny_position    pos;
+t_size      size;
+t_color     borderColor;
+int         borderSize;
+t_color     innerColor;
+char            *text;
+int         fontSize;
+t_color     fontColor;
+ptrfct      onclick;
+ptrfct      onhover;
+</code></pre>
+
+<p><strong>char *</strong> <code>name</code> : the name of the button</p>
+<p><strong>t_bunny_position</strong> <code>pos</code> : The position of the button</p>
+<p><strong>t_size</strong> <code>size</code> : The size of the button</p>
+<p><strong>t_color</strong> <code>borderColor</code> : The color of the border of the button</p>
+<p><strong>integer</strong> <code>borderSize</code> : The size of the button's border (in pixels)</p>
+<p><strong>t_color</strong> <code>innerColor</code> : The button's inner color</p>
+<p><strong>char *</strong> <code>text</code> : The text of the button</p>
+<p><strong>integer</strong> <code>fontSize</code> : the font size of the button's text</p>
+<p><strong>t_color</strong> <code>fontColor</code> : The color of the button's text</p>
+<p><strong>ptrfct</strong> <code>onclick</code> : The function called when the <code>onclick</code> event occurs</p>
+<p><strong>ptrfct</strong> <code>onhover</code> : The function called when the <code>onhover</code> event occurs</p>
+<h3 id="t_label"><code>t_label</code></h3>
+<pre><code class="c">char            *name;
+char            *text;
+t_color     color;
+int         size;
+t_bunny_position    pos;
+</code></pre>
+
+<p><strong>char *</strong>     <code>name</code> : The name of the label<br />
+<strong>char *</strong>     <code>text</code> : The text of the label<br />
+<strong>t_color</strong>     <code>color</code> : The text color of the label<br />
+<strong>int</strong>         <code>size</code> : The size of the label<br />
+<strong>t_bunny_position</strong>    <code>pos</code> : The position of he label</p>
+<h3 id="t_checkbox"><code>t_checkbox</code></h3>
+<pre><code class="c">char            *name;
+int         state;
+t_size      size;
+t_color     backcolor;
+ptrfct      oncheckstatechanged;
+t_label     *label;
+</code></pre>
+
+<p><strong>char *</strong>         <code>name</code> : The name of th checkbox<br />
+<strong>int</strong>         <code>state</code> : The current state of the checkbox<br />
+<strong>t_size</strong>      <code>size</code> : The size of the checkbox<br />
+<strong>ptrfct</strong>      <code>oncheckstatechanged</code> : The function called when the <code>oncheckstatechanged</code> event occurs<br />
+<strong>t_label *</strong>      <code>label</code> : The label linked to the checkbox</p>
+<h3 id="t_progressbar"><code>t_progressbar</code></h3>
+<pre><code class="c">char            *name;
+t_bunny_position    pos;
+t_size      size;
+t_color     borderColor;
+int         borderSize;
+t_color     backColor;
+t_color     barColor;
+int         value;
+int         max;
+int         min;
+t_label     attached_text;
+</code></pre>
+
+<p><strong>char *</strong>         <code>name</code></p>
+<ul>
+<li>The name of the progressbar</li>
+</ul>
+<p><strong>t_bunny_position</strong>    <code>pos</code></p>
+<ul>
+<li>The position of the progressbar</li>
+</ul>
+<p><strong>t_size</strong>      <code>size</code></p>
+<ul>
+<li>The size of the progressbar</li>
+</ul>
+<p><strong>t_color</strong>     <code>borderColor</code></p>
+<ul>
+<li>The color of the progressbar border</li>
+</ul>
+<p><strong>int</strong>         <code>borderSize</code></p>
+<ul>
+<li>The size of the progressbar's border</li>
+</ul>
+<p><strong>t_color</strong>     <code>backColor</code></p>
+<ul>
+<li>The back color of the progressbar</li>
+</ul>
+<p><strong>t_color</strong>     <code>barColor</code></p>
+<ul>
+<li>The color of the progressbar's bar</li>
+</ul>
+<p><strong>int</strong>         <code>value</code></p>
+<ul>
+<li>The current value of the progressbar</li>
+</ul>
+<p><strong>int</strong>         <code>max</code></p>
+<ul>
+<li>The max value of the progressbar</li>
+</ul>
+<p><strong>int</strong>         <code>min</code></p>
+<ul>
+<li>The minimum value of the progressbar</li>
+</ul>
+<p><strong>t_label</strong>     <code>attached_text</code></p>
+<ul>
+<li>The text attached to the progressbar</li>
+</ul>
+<h3 id="t_textbox"><code>t_textbox</code></h3>
+<pre><code class="c">char            *name;
+t_bunny_position    pos;
+t_size      size;
+t_color     borderColor;
+int         borderSize;
+t_color     innerColor;
+char            *text;
+char            *placeholder;
+t_color     placeholder_color;
+int         fontSize;
+t_color     fontColor;
+ptrfct      onclick;
+ptrfct      onhover;
+ptrfct      ontextchanged;
+int         waiting_for_text;
+</code></pre>
+
+<p><strong>char *</strong>         <code>name</code> : The name<br />
+<strong>t_bunny_position</strong>    <code>pos</code> : The position<br />
+<strong>t_size</strong>      <code>size</code> : The size<br />
+<strong>t_color</strong>     <code>borderColor</code> : The border color<br />
+<strong>int</strong>         <code>borderSize</code> : The border size<br />
+<strong>t_color</strong>     <code>innerColor</code> : The inner coloor<br />
+<strong>char *</strong>         <code>text</code> : The predefined text<br />
+<strong>char *</strong>         <code>placeholder</code> : the placeholder (Appear if no text is typed)<br />
+<strong>t_color</strong>     <code>placeholder_color</code> : The placeholder font color<br />
+<strong>int</strong>         <code>fontSize</code> : The text font size<br />
+<strong>t_color</strong>     <code>fontColor</code> : The text font color<br />
+<strong>ptrfct</strong>      <code>onclick</code> : The function called when the <code>onclick</code> event occurs<br />
+<strong>ptrfct</strong>      <code>onhover</code> : The function called when the <code>onhover</code> event occurs<br />
+<strong>ptrfct</strong>      <code>ontextchanged</code> : The function called when the <code>ontextchanged</code> event occurs<br />
+<strong>int</strong>         <code>waiting_for_text</code> : Set to 1 if the textbox is waiting text <em>i.e.</em> the textbox is selected</p>
+<h3 id="t_image"><code>t_image</code></h3>
+<p>See the <a href="../../en/function_list/#image">Image macros</a></p>
+<pre><code class="c">char            *name;
+int         borderSize;
+t_color     borderColor;
+char            *src;
+t_size      size;
+t_bunny_position    pos;
+ptrfct      onclick;
+</code></pre>
+
+<p><strong>char *</strong>         <code>name</code> : The name<br />
+<strong>int</strong>         <code>borderSize</code> : the size of the border<br />
+<strong>t_color</strong>     <code>borderColor</code> : The color of the border<br />
+<strong>char *</strong>         <code>src</code> : The path to the image source<br />
+<strong>t_size</strong>      <code>size</code> : The size of the frame where the image will be displayed<br />
+<strong>t_bunny_position</strong>    <code>pos</code> : The position<br />
+<strong>ptrfct</strong>      <code>onclick</code> : The function called when the <code>onclick</code> event occurs</p>
+<h3 id="t_tekgui"><code>t_tekgui</code></h3>
+<pre><code class="c">struct s_tekgui *child_win;
+int         child_win_nbr;
+t_button        *buttons;
+int         buttons_nbr;
+t_checkbox      *checkboxs;
+int         checkboxs_nbr;
+t_progressbar       *progressbars;
+int         progressbars_nbr;
+t_label     *labels;
+int         labels_nbr;
+t_textbox       *textboxs;
+int         textboxs_nbr;
+t_image     *images;
+int         images_nbr;
+t_bunny_ini     *config;
+t_size      size;
+t_bunny_window  *win;
+char            *name;
+t_bunny_pixelarray  *pix;
+t_color     bgcolor;
+t_bunny_pixelarray  *font;
+t_bunny_pixelarray  **png_checkbox;
+t_callback_list callback;
+double      progress;
+void            *userdata;
+</code></pre>
+
+<p><strong>struct s_tekgui   *</strong><code>child_win</code> : A pointer to windows child of the main window<br />
+<strong>int</strong> <code>child_win_nbr</code> : The number of child windows<br />
+<strong>t_button *</strong><code>buttons</code> : A pointer to the buttons<br />
+<strong>int</strong> <code>buttons_nbr</code> : The number of buttons<br />
+<strong>t_checkbox *</strong> <code>checkboxs</code> : A pointer to the checkboxs<br />
+<strong>int</strong> <code>checkboxs_nbr</code> : The number of checkboxs<br />
+<strong>t_progressbar *</strong> <code>progressbars</code> : A pointer to the progressbars<br />
+<strong>int</strong> <code>progressbars_nbr</code> : The number of progressbars<br />
+<strong>t_label *</strong> <code>labels</code> : A pointer to the labels<br />
+<strong>int</strong> <code>labels_nbr</code> : The number of labels<br />
+<strong>t_textbox *</strong> <code>textboxs</code> : A pointer to the textboxs<br />
+<strong>int</strong> <code>textboxs_nbr</code> : The number of textboxs<br />
+<strong>t_image *</strong> <code>images</code> : A pointer to the images<br />
+<strong>int</strong> <code>images_nbr</code> : The number of images<br />
+<strong>t_bunny_ini *</strong> <code>config</code> : The current config file<br />
+<strong>t_size</strong> <code>size</code> : The window original size<br />
+<strong>t_bunny_window *</strong> <code>win</code> : The <code>t_buny_window</code> component (for sharing)<br />
+<strong>char *</strong> <code>name</code> : The window name<br />
+<strong>t_bunny_pixelarray *</strong> <code>pix</code> : The render <code>pixelarray</code><br />
+<strong>t_color</strong> <code>bgcolor</code> : The background color<br />
+<strong>t_bunny_pixelarray *</strong> <code>font</code> : The font file<br />
+<strong>t_bunny_pixelarray **</strong> <code>png_checkbox</code> : The checkbox image ressource<br />
+<strong>void *</strong> <code>userdata</code> : The variable where the user can put his datas</p>
+<h1 id="tips-and-tricks">Tips and tricks</h1>
+<p>You can define colors in several ways<br />
+If you have an <code>unsigned int</code> : 0xff0000<br />
+But you need a <code>t_color</code>, you can simply do this :</p>
+<pre><code class="c">t_color color;
+unsigned int c;
+
+c = 0xff0000;
+color.full = c;
+</code></pre>
+
+<p>It will convert your <code>unsigned int</code> to a <code>t_color</code><br />
+In reverse you can do this too</p>
+<pre><code class="c">t_color color;
+unsigned int c;
+
+color.argb[0] = 255;
+color.argb[1] = 0;
+color.argb[2] = 0;
+c = color.full;
+</code></pre></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            
+            <center>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</center>
+        </footer>
+
+        <script src="../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../js/highlight.pack.js"></script>
+        <script>var base_url = '../..';</script>
+        <script data-main="../../mkdocs/js/search.js" src="../../mkdocs/js/require.js"></script>
+        <script src="../../js/base.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            From here you can search these documents. Enter
+                            your search terms below.
+                        </p>
+                        <form role="form">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                            </div>
+                        </form>
+                        <div id="mkdocs-search-results"></div>
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

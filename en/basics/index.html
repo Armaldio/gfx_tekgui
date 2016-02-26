@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+
+	<title>Basics - gfx_tekgui</title>
+
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../css/highlight.css">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link href="../../css/extra.css" rel="stylesheet">
+        <link href="../../css/highlight-fix.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="../..">gfx_tekgui</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+                <li >
+                    <a href="../..">Overview</a>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Français <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../fr/basics/">Bases</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../fr/building_ini/">Comment construire un ini</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../fr/components/">Configuration des conmposants</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../functions/">Fonctions</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../function_list/">Liste des fonction</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown active">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">English <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li class="active">
+                            <a href="./">Basics</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../building_ini/">How to build an ini</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../components/">Components configuration</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../functions/">Functions</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../function_list/">Function list</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                <li >
+                    <a rel="next" href="../function_list/">
+                        <i class="fa fa-arrow-left"></i> Previous
+                    </a>
+                </li>
+                <li >
+                    <a rel="prev" href="../building_ini/">
+                        Next <i class="fa fa-arrow-right"></i>
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#welcome-to-the-tutorial-of-libtekgui">Welcome to the tutorial of LibTekGui</a></li>
+        
+            <li><a href="#setup">Setup</a></li>
+        
+            <li><a href="#minimum-code">Minimum code</a></li>
+        
+    
+    </ul>
+</div></div>
+            <div class="col-md-9" role="main">
+
+<h1 id="welcome-to-the-tutorial-of-libtekgui">Welcome to the tutorial of LibTekGui</h1>
+<h2 id="setup">Setup</h2>
+<p>First, create a folder <code>lib</code> at the root of your project if it doesn't exist and put the file <code>libtekgui.a</code> inside.</p>
+<p>Now, you have to edit you Makefile :</p>
+<p>Add <code>LIB_TEKGUI = -Llib -ltekgui</code> in your variables section and <code>$(LIB_TEKGUI)</code> in your compilation line If you don't use Makefile, run cc/gcc command with <code>-Llib -ltekgui</code> at the end.</p>
+<p>That's all !</p>
+<h2 id="minimum-code">Minimum code</h2>
+<p>You need at least a <code>main.c</code> and a <code>configuration.ini</code> file.</p>
+<h3 id="main-file">Main file</h3>
+<p>Here is an example of a basic <code>main.c</code> file :</p>
+<pre><code class="c">int main()
+{
+  t_tekgui      *gui;
+
+   gui = tekgui_load(&quot;full.ini&quot;);
+   gui-&gt;pix = bunny_new_pixelarray(gui-&gt;size.width, gui-&gt;size.height);
+   tekgui_display(gui-&gt;pix, gui);
+   tekgui_show(gui);
+   return(0);
+}
+</code></pre>
+
+<p><code>t_tekgui</code> is a structure that contains all the required datas.</p>
+<p>To set this var, you have to use <code>tekgui_load</code> and pass a configuration file as parameter.</p>
+<p><code>tekgui_display</code> is used to put all the data of the <code>gui</code> to a <code>pixelarray</code> <sup id="fnref:1"><a class="footnote-ref" href="#fn:1" rel="footnote">1</a></sup>. There is already a predefined <em>pixelarray</em> <sup id="fnref:1"><a class="footnote-ref" href="#fn:1" rel="footnote">1</a></sup> inside <code>t_tekgui</code></p>
+<p>And finally, <code>tekgui_show</code> display a window with all the content of <code>gui</code> and <code>gui-&gt;pix</code></p>
+<h3 id="configuration-file">Configuration file</h3>
+<p>Here is an example of a basic <code>configuration.ini</code> file :</p>
+<pre><code class="ini">[win]
+width=500
+height=500
+name=my_name
+bgcolor=240,240,240
+</code></pre>
+
+<p>This file will show an empty window of size <code>500</code>x<code>500</code>, with the name <code>my_name</code> and with the background color <code>240</code>,<code>240</code>,<code>240</code> that is a light grey as the Windows's window background.</p>
+<p>A preview with the current settings :</p>
+<p><img alt="preview image" src="http://img15.hostingpics.net/pics/524228myname001.png" /></p>
+<p>You can now go to the second part to learn how to <a href="../building_ini/">Build an ini file</a></p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>A pixelarray is a an array of pixels that contains color data.&#160;<a class="footnote-backref" href="#fnref:1" rev="footnote" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            
+            <center>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</center>
+        </footer>
+
+        <script src="../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../js/highlight.pack.js"></script>
+        <script>var base_url = '../..';</script>
+        <script data-main="../../mkdocs/js/search.js" src="../../mkdocs/js/require.js"></script>
+        <script src="../../js/base.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            From here you can search these documents. Enter
+                            your search terms below.
+                        </p>
+                        <form role="form">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                            </div>
+                        </form>
+                        <div id="mkdocs-search-results"></div>
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
