@@ -1,0 +1,22 @@
+site_name: gfx_tekgui
+theme: cyborg
+extra_css:
+    - css/extra.css
+    - css/highlight-fix.css
+markdown_extensions: [abbr,attr_list,def_list,footnotes,tables,admonition,nl2br,toc]
+
+pages:
+- Overview : 'index.md'
+- Français :
+  - Bases : 'fr/basics.md'
+  - Comment construire un ini : 'fr/building_ini.md'
+  - Configuration des conmposants : 'fr/components.md'
+  - Fonctions : 'en/functions.md'
+  - Liste des fonction : 'en/function_list.md'
+
+- English :
+  - Basics : 'en/basics.md'
+  - How to build an ini : 'en/building_ini.md'
+  - Components configuration : 'en/components.md'
+  - Functions : 'en/functions.md'
+  - Function list : 'en/function_list.md'
