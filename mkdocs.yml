@@ -13,6 +13,7 @@ pages:
   - Configuration des conmposants : 'fr/components.md'
   - Fonctions : 'en/functions.md'
   - Liste des fonction : 'en/function_list.md'
+  - Clavier : 'keys.md'
 
 - English :
   - Basics : 'en/basics.md'
@@ -20,3 +21,4 @@ pages:
   - Components configuration : 'en/components.md'
   - Functions : 'en/functions.md'
   - Function list : 'en/function_list.md'
+  - Keys : 'keys.md'

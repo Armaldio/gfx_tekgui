@@ -45,6 +45,18 @@ Now you can interact with your button and access all it's components
 It also works for all the components
 I invite you to read the [function list](/en/function_list.md) to know all the capabilities.
 
+Adding keybindings
+---
+
+You can define your own keybindings with a simple function :
+
+```c
+tekgui_addkeytrigger(gui, BKS_J, "click", GO_DOWN);
+```
+Where `gui` is the `t_tekgui` component
+`BKS_J` is the key (see the [keylist](/keys.md))
+`"click"` is the function name that will be called
+`GO_DOWN` is the state of the key (see the [state list](/keys.md/#state-list))
 
 Adding new components
 ---

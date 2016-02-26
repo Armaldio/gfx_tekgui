@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+
+	<title>Configuration des conmposants - gfx_tekgui</title>
+
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../css/highlight.css">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link href="../../css/extra.css" rel="stylesheet">
+        <link href="../../css/highlight-fix.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="../..">gfx_tekgui</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+                <li >
+                    <a href="../..">Overview</a>
+                </li>
+            
+            
+            
+                <li class="dropdown active">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Français <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../basics/">Bases</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../building_ini/">Comment construire un ini</a>
+                        </li>
+                    
+                        <li class="active">
+                            <a href="./">Configuration des conmposants</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../en/functions/">Fonctions</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../en/function_list/">Liste des fonction</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../keys/">Clavier</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">English <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../en/basics/">Basics</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../en/building_ini/">How to build an ini</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../en/components/">Components configuration</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../en/functions/">Functions</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../en/function_list/">Function list</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../keys/">Keys</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                <li >
+                    <a rel="next" href="../building_ini/">
+                        <i class="fa fa-arrow-left"></i> Previous
+                    </a>
+                </li>
+                <li >
+                    <a rel="prev" href="../../en/functions/">
+                        Next <i class="fa fa-arrow-right"></i>
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#type-de-donnees">Type de données</a></li>
+        
+            <li><a href="#couleur">Couleur</a></li>
+        
+            <li><a href="#position">Position</a></li>
+        
+            <li><a href="#taille">Taille</a></li>
+        
+            <li><a href="#chaine-de-caractere">Chaîne de caractere</a></li>
+        
+            <li><a href="#nom-de-fonction">Nom de fonction</a></li>
+        
+    
+        <li class="main "><a href="#composants">Composants</a></li>
+        
+            <li><a href="#fenetre">Fenêtre</a></li>
+        
+            <li><a href="#bouton">Bouton</a></li>
+        
+            <li><a href="#case-a-cocher">Case à cocher</a></li>
+        
+            <li><a href="#image">Image</a></li>
+        
+            <li><a href="#label">Label</a></li>
+        
+            <li><a href="#barre-de-progression">Barre de progression</a></li>
+        
+            <li><a href="#boite-de-texte">Boîte de texte</a></li>
+        
+    
+    </ul>
+</div></div>
+            <div class="col-md-9" role="main">
+
+<h1 id="type-de-donnees">Type de données</h1>
+<h2 id="couleur">Couleur</h2>
+<p>Une couleur est définie par un ensemble de 3 valeurs, comprises entre 0 et 255, séparées par des virgules. <br> ex: <code>26,22,128</code> <br> La couleur est <img alt="preview image" src="../../img/blue_color.png" /></p>
+<h2 id="position">Position</h2>
+<p>Une position est définie par un ensemble de 2 valeurs, séparées par des virgules <br> ex: <code>50,100</code> <br> TCette position est relative à la fenêtre</p>
+<h2 id="taille">Taille</h2>
+<p>Une taille est définie par un ensemble de 2 values, séparées par des virgules <br> ex: <code>16,16</code></p>
+<h2 id="chaine-de-caractere">Chaîne de caractere</h2>
+<p>Une chaine-de-caractere est une chaîne de caracteres <br> ex: <code>"Bonjour"</code> <br> Une chaine-de-caractere est toujours entre guillements " "</p>
+<h2 id="nom-de-fonction">Nom de fonction</h2>
+<p>Un nom de fonction est une chaine de caractere qu correspond a une fonction présente a l'intereieur de votre code <br> ex: <code>tekgui_load</code></p>
+<h1 id="composants">Composants</h1>
+<h2 id="fenetre">Fenêtre</h2>
+<p>Dans votre <em><strong>scope</strong></em> <code>win</code></p>
+<p><code>width</code> est un entier</p>
+<p><code>height</code> est un entier</p>
+<p><code>name</code> est une <a href="../../en/components/#chaine-de-caractere">chaîne de caractères</a></p>
+<h2 id="bouton">Bouton</h2>
+<p><img alt="preview" src="../../img/button.png" /></p>
+<p>Dans votre <em><strong>scope</strong></em> <code>win</code></p>
+<pre><code class="ini">buttons=btn1,btn2
+
+[btn1]
+...
+</code></pre>
+
+<p>Dans votre <em><strong>scope</strong></em> bouton :</p>
+<p><code>borderColor</code> est une <a href="../../fr/components/#couleur">couleur</a></p>
+<p><code>innerColor</code> est une <a href="../../fr/components/#couleur">couleur</a></p>
+<p><code>borderSize</code> est un entier (en pixels)</p>
+<p><code>pos</code> est un <a href="../../en/components/#position">position</a></p>
+<p><code>size</code> est une <a href="../../en/components/#taille">taille</a></p>
+<p><code>text</code> est une <a href="../../en/components/#chaine-de-caractere">chaîne de caractères</a></p>
+<p><code>fontColor</code> est une <a href="../../fr/components/#couleur">couleur</a></p>
+<p><code>onclick</code> est un <a href="../../en/components/#nom-de-fonction">nom de fonction</a></p>
+<h2 id="case-a-cocher">Case à cocher</h2>
+<p><img alt="preview" src="../../img/checkbox.png" /></p>
+<p>Dans votre <em><strong>scope</strong></em> <code>win</code></p>
+<pre><code class="ini">checkboxs=checkboxs1,checkboxs2
+
+[checkboxs1]
+...
+</code></pre>
+
+<p>Dans votre <strong><em>scope</em></strong> checkbox:</p>
+<p><code>fontSize</code> est un entier (en pixels)</p>
+<p><code>fontColor</code>  est une <a href="../../fr/components/#couleur">couleur</a></p>
+<p><code>pos</code> est un <a href="../../en/components/#position">position</a></p>
+<p><code>size</code> est une <a href="../../en/components/#taille">taille</a></p>
+<p><code>text</code> est une <a href="../../en/components/#chaine-de-caractere">chaîne de caractères</a></p>
+<p><code>oncheckstatechanged</code> est un <a href="../../en/components/#nom-de-fonction">nom de fonction</a></p>
+<h2 id="image">Image</h2>
+<p>Dans votre <em><strong>scope</strong></em> <code>win</code></p>
+<pre><code class="ini">images=img1
+
+[img1]
+...
+</code></pre>
+
+<p>Dans votre <strong><em>scope</em></strong> image :</p>
+<p><code>pos</code> est un <a href="../../en/components/#position">position</a></p>
+<p><code>size</code> est une <a href="../../en/components/#taille">taille</a></p>
+<p><code>onclick</code> est un <a href="../../en/components/#nom-de-fonction">nom de fonction</a></p>
+<p><code>borderSize</code> est un entier</p>
+<p><code>borderColor</code> est une <a href="../../fr/components/#couleur">couleur</a></p>
+<p><code>src</code> est une <a href="../../en/components/#chaine-de-caractere">chaîne de caractères</a></p>
+<h2 id="label">Label</h2>
+<p><img alt="preview" src="../../img/label.png" /></p>
+<p>Dans votre <em><strong>scope</strong></em> <code>win</code></p>
+<pre><code class="ini">labels=label1,label2
+
+[label1]
+...
+</code></pre>
+
+<p>Dans votre scope <strong><em>scope</em></strong> label :</p>
+<p><code>pos</code> est un <a href="../../en/components/#position">position</a></p>
+<p><code>fontSize</code> est un entier</p>
+<p><code>fontColor</code> est une <a href="../../fr/components/#couleur">couleur</a></p>
+<p><code>text</code> est une <a href="../../en/components/#chaine-de-caractere">chaîne de caractères</a></p>
+<h2 id="barre-de-progression">Barre de progression</h2>
+<p><img alt="preview" src="../../img/progressbar1.png" /><br />
+<img alt="preview" src="../../img/progressbar2.png" /></p>
+<p>Dans votre <em><strong>scope</strong></em> <code>win</code></p>
+<pre><code class="ini">progressbars=pgrsbar
+
+[pgrsbar]
+...
+</code></pre>
+
+<p>Dasn votre <strong><em>scope</em></strong> progressbar:</p>
+<p><code>borderColor</code> est une <a href="../../fr/components/#couleur">couleur</a></p>
+<p><code>borderSize</code> est un entier</p>
+<p><code>backColor</code> est une <a href="../../fr/components/#couleur">couleur</a></p>
+<p><code>barColor</code> est une <a href="../../fr/components/#couleur">couleur</a></p>
+<p><code>pos</code> est un <a href="../../en/components/#position">position</a></p>
+<p><code>size</code> est un entier</p>
+<p><code>value</code> est un entier</p>
+<p><code>max, min</code> est un entier</p>
+<h2 id="boite-de-texte">Boîte de texte</h2>
+<p><img alt="preview" src="../../img/textbox.png" /></p>
+<p>Dans votre <em><strong>scope</strong></em> <code>win</code></p>
+<pre><code class="ini">textboxs=tb
+
+[tb]
+...
+</code></pre>
+
+<p>Dans votre scope <strong><em>scope</em></strong> textbox :</p>
+<p><code>borderColor</code> est une <a href="../../fr/components/#couleur">couleur</a></p>
+<p><code>borderSize</code> est un entier</p>
+<p><code>fontColor</code> est une <a href="../../fr/components/#couleur">couleur</a></p>
+<p><code>fontSize</code> est un entier</p>
+<p><code>innerColor</code> est une <a href="../../fr/components/#couleur">couleur</a></p>
+<p><code>pos</code> est un <a href="../../en/components/#position">position</a></p>
+<p><code>size</code> est un entier</p>
+<p><code>placeholder</code> est une <a href="../../en/components/#chaine-de-caractere">chaîne de caractères</a></p>
+<p><code>placeholderColor</code> est une <a href="../../fr/components/#couleur">couleur</a></p>
+<p><code>ontextentered</code> est un <a href="../../en/components/#nom-de-fonction">nom de fonction</a></p>
+<p><code>onclick</code> est un <a href="../../en/components/#nom-de-fonction">nom de fonction</a></p></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            
+            <center>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</center>
+        </footer>
+
+        <script src="../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../js/highlight.pack.js"></script>
+        <script>var base_url = '../..';</script>
+        <script data-main="../../mkdocs/js/search.js" src="../../mkdocs/js/require.js"></script>
+        <script src="../../js/base.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            From here you can search these documents. Enter
+                            your search terms below.
+                        </p>
+                        <form role="form">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                            </div>
+                        </form>
+                        <div id="mkdocs-search-results"></div>
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
